@@ -154,7 +154,7 @@ public class VectorBenchmarks {
     float speed = multiplier * stats.getNCalls() * (numNonZeros * 1000.0f * 12 / stats.getSumTime());
     float opsPerSec = stats.getNCalls() * 1000000000.0f / stats.getSumTime();
     log.info("{} {} \n{} {} \nOps    = {} Units/sec\nIOps   = {} MBytes/sec", benchmarkName,
-        implName, content, stats.toString(), DF.format(opsPerSec), DF.format(speed));
+        implName, content, stats, DF.format(opsPerSec), DF.format(speed));
 
     if (!implType.containsKey(implName)) {
       implType.put(implName, implType.size());
