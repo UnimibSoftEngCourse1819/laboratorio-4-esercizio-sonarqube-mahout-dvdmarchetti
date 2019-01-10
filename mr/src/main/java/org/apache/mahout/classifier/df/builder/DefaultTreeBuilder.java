@@ -102,6 +102,9 @@ public class DefaultTreeBuilder implements TreeBuilder {
       }
     }
 
+    // False positive: best cannot be null because the for loop
+    // is gonna be executed at least once and replace the null value
+    // for sure.
     boolean alreadySelected = selected[best.getAttr()];
     if (alreadySelected) {
       // attribute already selected
