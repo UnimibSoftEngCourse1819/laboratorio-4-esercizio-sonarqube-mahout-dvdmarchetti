@@ -17,7 +17,6 @@
 
 package org.apache.mahout.benchmark;
 
-import java.io.IOException;
 import java.util.Random;
 
 import org.apache.mahout.common.RandomUtils;
@@ -33,7 +32,7 @@ public class ClosestCentroidBenchmark {
     this.mark = mark;
   }
 
-  public void benchmark(DistanceMeasure measure) throws IOException {
+  public void benchmark(DistanceMeasure measure) {
     SparseMatrix clusterDistances = new SparseMatrix(mark.numClusters, mark.numClusters);
     for (int i = 0; i < mark.numClusters; i++) {
       for (int j = 0; j < mark.numClusters; j++) {
