@@ -251,6 +251,10 @@ public class GenericItemBasedRecommender extends AbstractRecommender implements 
     if (count <= 1) {
       return Float.NaN;
     }
+    // False positive: total similarity cannot be zero.
+    // It might be zero only if similarities.length == 0, in that
+    // case the count variable would be equal to zero, and the previous
+    // if statement would catch that and return Float.NaN
     float estimate = (float) (preference / totalSimilarity);
     if (capper != null) {
       estimate = capper.capEstimate(estimate);
